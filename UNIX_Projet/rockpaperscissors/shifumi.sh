@@ -1,5 +1,8 @@
 #!/bin/bash
 clear
+source fonctions/affichage.sh
+source fonctions/help.sh
+help
 if [[ $1 > "1" ]] && [[ $1 -le "10" ]]
 then
 	case $Choice in
