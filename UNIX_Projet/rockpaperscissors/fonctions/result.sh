@@ -1,4 +1,5 @@
 result(){
+	
 	Achoice=$[($RANDOM % ($[3 - 1] + 1)) + 1] 
 	if [[ $Choice == $Achoice ]]; then
 		echo -e "\n> Equality"		
