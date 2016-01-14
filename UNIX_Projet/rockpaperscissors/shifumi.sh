@@ -1,7 +1,11 @@
 #!/bin/bash
 clear
 source fonctions/result.sh
-# Call functions 
+source fonctions/affichage.sh
+source fonctions/help.sh
+# Call functions
+affichage
+
 if [[ $1 > "1" ]] && [[ $1 -le "10" ]]
 then
 	case $Choice in
@@ -16,6 +20,7 @@ echo -e "Ready to play Shifumi? Here we go! \n"
 			echo -e "      1- rock"
 			echo -e "      2- paper"
 			echo -e "      3- scissors"
+			echo -e "      help- If you need help"
 			echo -e "      X- Quit game \n"
 			read -p "Make choice: " Choice
 			if [[ $Choice == X ]]; then
@@ -35,7 +40,7 @@ echo -e "Ready to play Shifumi? Here we go! \n"
 					win
 					echo -e "> Score: " $Score "\n";;		
 				X ) echo -e "> Score: " $Score "\n";;
-			  # help) help;;
+			  help) help;;
 				* ) echo -e "\nError: You make bad choice. Try again.\n";;	
 			esac
 		done
@@ -44,5 +49,5 @@ echo -e "Ready to play Shifumi? Here we go! \n"
 		echo -e "	      See you on rock-paper-scissors. \n"
 		# echo -e "\n""---------------------------------------------------------------""\n"
 elif [[ -z $i ]]; then
- 	echo -e "\n Error: Vous n'avez pas entrer les bonnes informations \n" #help option if $1 empty
+ 	echo -e \\033[31\;7m"\n Error:"\\033[0m" Vous n'avez pas entrer les bonnes informations \n" #help option if $1 empty
 fi
