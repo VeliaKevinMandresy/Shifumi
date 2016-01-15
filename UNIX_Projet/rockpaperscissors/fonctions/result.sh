@@ -1,23 +1,23 @@
 loose(){
-	Achoice=$[($RANDOM % ($[3 - 1] + 1)) + 1]
 	if [[ $Choice == "1" && $Achoice == "2" ]]; then
 		echo -e "\n> Paper covers Rock"
+		ScoreIA=$[$ScoreIA+1]
 	elif [[ $Choice == "2" && $Achoice == "3" ]]; then
 		echo -e "\n> Scissors cut Paper"
+		ScoreIA=$[$ScoreIA+1]
 	elif [[ $Choice == "3" && $Achoice == "1" ]]; then
 		echo -e "\n> Rock crushes Scissors"
+		ScoreIA=$[$ScoreIA+1]
 	fi	 
 }
 
 equality(){
-	Achoice=$[($RANDOM % ($[3 - 1] + 1)) + 1] 
 	if [[ $Choice == $Achoice ]]; then
 		echo -e "\n> Equality"
 	fi	
 }
 
 win(){
-	Achoice=$[($RANDOM % ($[3 - 1] + 1)) + 1]
 	if [[ $Choice == "1" && $Achoice == "3" ]]; then
 		echo -e "\n> Rock crushes Scissors"
 		Score=$[$Score+1]
